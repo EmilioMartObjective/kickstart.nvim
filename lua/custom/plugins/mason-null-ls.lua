@@ -13,7 +13,10 @@ return {
       sources = {
         formatting.prettierd.with({
           extra_args = { "--single-quote", "--jsx-single-quote"}
-        }) }
+        }),
+        formatting.blade_formatter,
+      }
+
     })
   end,
 }
