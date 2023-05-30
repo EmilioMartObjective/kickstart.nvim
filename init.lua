@@ -264,12 +264,15 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 
 -- [[ Configure Telescope ]]
 -- See `:help telescope` and `:help telescope.setup()`
+local telescope_action = require('telescope.actions')
 require('telescope').setup {
   defaults = {
     mappings = {
       i = {
         ['<C-u>'] = false,
         ['<C-d>'] = false,
+        ["<C-k>"] = telescope_action.move_selection_previous, -- move to prev result
+        ["<C-j>"] = telescope_action.move_selection_next,     -- move to next result
       },
     },
   },
